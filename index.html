@@ -5,20 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>unkvoices — Música, Kits & Plugins</title>
   <meta name="description" content="Hub musical do unkvoices: beats, drum kits, plugins e tutoriais." />
+  <link rel="icon" type="image/png" href="ico_white.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#0ea5e9;color:#fff;
+      padding:12px 16px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:.3s;z-index:1000}
+    .toast.show{opacity:1;pointer-events:auto}
+  </style>
 </head>
 <body>
   <header>
     <div class="container nav">
       <a class="brand" href="#">
-        <div class="logo" aria-hidden="true"></div>
+        <img src="ico_white.png" alt="unkvoices logo" style="height:32px; vertical-align:middle;">
         <strong>unkvoices</strong>
       </a>
       <div class="search">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 21L15.8 15.8M17 10.5C17 13.5376 14.5376 16 11.5 16C8.46243 16 6 13.5376 6 10.5C6 7.46243 8.46243 5 11.5 5C14.5376 5 17 7.46243 17 10.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         <input id="searchInput" placeholder="Pesquisar beats, kits, plugins..." />
       </div>
       <button class="burger" aria-label="Abrir menu" aria-expanded="false" onclick="toggleMenu()">☰</button>
@@ -37,58 +42,50 @@
       <div>
         <p class="badge">Hub musical</p>
         <h1 class="title">Beats, Kits, Plugins — tudo num só lugar.</h1>
-        <p class="subtitle">Foco total na música: criação de beats, sound design, composição, captação, mix/master e, futuramente, distribuição. Conteúdo direto e prático.</p>
+        <p class="subtitle">Foco total na música: beats, sound design, composição, captação, mix/master e distribuição futura.</p>
         <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:14px">
           <a class="btn" href="#beats">Ouvir Beats</a>
           <a class="btn-ghost" href="#kits">Baixar Kits</a>
         </div>
-        <p style="margin-top:10px" class="small">Atalhos: <kbd>Espaço</kbd> play/pause • <kbd>←/→</kbd> seek • <kbd>M</kbd> mute</p>
-      </div>
-      <div class="card">
-        <div class="audio-player">
-          <button id="playPauseBtn" class="btn-ghost">▶︎</button>
-          <div class="progress" id="progress"><div class="bar" id="progressBar"></div></div>
-          <span id="timeLabel" class="small">0:00</span>
-          <input id="volume" type="range" min="0" max="1" step="0.01" value="1" aria-label="Volume">
-        </div>
-        <p id="nowPlaying" class="small" style="margin-top:8px">Nada tocando</p>
-        <audio id="player" preload="metadata"></audio>
       </div>
     </section>
 
-    <section class="section" id="beats" aria-label="Beats">
+    <section class="section" id="beats">
       <h2>Beats</h2>
       <div id="beatsGrid" class="grid"></div>
     </section>
 
-    <section class="section" id="kits" aria-label="Drum Kits">
+    <section class="section" id="kits">
       <h2>Drum Kits</h2>
       <div id="kitsGrid" class="grid"></div>
     </section>
 
-    <section class="section" id="plugins" aria-label="Plugins">
+    <section class="section" id="plugins">
       <h2>Plugins</h2>
       <div id="pluginsGrid" class="grid"></div>
     </section>
 
-    <section class="section" id="tutoriais" aria-label="Tutoriais">
+    <section class="section" id="tutoriais">
       <h2>Tutoriais</h2>
       <div id="tutorialsGrid" class="grid"></div>
     </section>
 
-    <section class="section" id="contato" aria-label="Contato">
+    <section class="section" id="contato">
       <h2>Contato</h2>
       <div class="card">
-        <form onsubmit="return handleSubmit(event)">
+        <form id="contactForm" action="https://formspree.io/f/xgvlpnzg" method="POST" onsubmit="return confirmSend()">
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px">
-            <input required type="text" name="nome" placeholder="Teu nome" class="btn-ghost" style="padding:12px" aria-label="Nome"/>
-            <input required type="email" name="email" placeholder="Teu e-mail" class="btn-ghost" style="padding:12px" aria-label="E-mail"/>
+            <input required type="text" name="nome" placeholder="Teu nome" class="btn-ghost" />
+            <input required type="email" name="email" placeholder="Teu e-mail" class="btn-ghost" />
           </div>
-          <input type="text" name="assunto" placeholder="Assunto" class="btn-ghost" style="padding:12px; width:100%; margin-top:8px" aria-label="Assunto"/>
-          <textarea required name="mensagem" rows="5" placeholder="Escreve tua mensagem" class="btn-ghost" style="padding:12px; width:100%; margin-top:8px" aria-label="Mensagem"></textarea>
+          <input type="text" name="assunto" placeholder="Assunto" class="btn-ghost" style="margin-top:8px; width:100%;" />
+          <textarea required name="mensagem" rows="5" placeholder="Escreve tua mensagem" class="btn-ghost" style="margin-top:8px; width:100%;"></textarea>
+          <input type="hidden" name="_subject" value="Novo contato — unkvoices" />
+          <input type="text" name="_gotcha" style="display:none" />
+          <input type="hidden" name="_next" value="index.html?sent=1#contato" />
           <div style="display:flex; gap:10px; margin-top:12px">
             <button class="btn" type="submit">Enviar</button>
-            <a class="btn-ghost" href="mailto:unkvoices@example.com">E-mail direto</a>
+            <a class="btn-ghost" href="franciscoarmandochicogil@gmail.com">E-mail direto</a>
           </div>
         </form>
       </div>
@@ -97,19 +94,24 @@
 
   <footer>
     <div class="container footer">
-      <span class="small">© <span id="year"></span> unkvoices — feito com foco total na música.</span>
-      <div class="small">Feito para GitHub Pages • substitua os placeholders pelos teus arquivos reais.</div>
-<<<<<<< HEAD
-      <div class="small">Feito para Artistas | Produtores</div>
-=======
->>>>>>> a1fd81f (primeiro upload)
+      <span class="small">© 2025 unkvoices — feito com foco na música.</span>
     </div>
   </footer>
 
+  <div id="toast" class="toast">Mensagem enviada com sucesso!</div>
+
   <script src="app.js"></script>
+  <script>
+    function confirmSend(){ return confirm('Tem certeza que deseja enviar esta mensagem?'); }
+    (function(){
+      const params=new URLSearchParams(location.search);
+      if(params.get("sent")==="1"){
+        const t=document.getElementById("toast");
+        t.classList.add("show");
+        setTimeout(()=>t.classList.remove("show"),4000);
+        history.replaceState({}, "", location.pathname+"#contato");
+      }
+    })();
+  </script>
 </body>
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> a1fd81f (primeiro upload)

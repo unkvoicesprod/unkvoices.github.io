@@ -215,7 +215,7 @@ $("#searchInput")?.addEventListener("input", (e) => {
 });
 
 // Contact form dummy handler
-function handleSubmit(e){
+// REMOVIDO handleSubmit(e){
   e.preventDefault();
   const form = e.target;
   const data = Object.fromEntries(new FormData(form).entries());
@@ -226,3 +226,9 @@ function handleSubmit(e){
 window.handleSubmit = handleSubmit;
 
 $("#year").textContent = new Date().getFullYear();
+
+function toggleMenu() {
+  const menu = document.getElementById("menu");
+  menu.classList.toggle("show");
+}
+
