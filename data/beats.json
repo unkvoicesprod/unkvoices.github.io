@@ -1,0 +1,44 @@
+[
+  {
+    "id": "beat-001",
+    "title": "Neon Pulse",
+    "producer": "unkvoices",
+    "bpm": 140,
+    "key": "F# minor",
+    "genre": "Trap",
+    "mood": [
+      "dark",
+      "spacey"
+    ],
+    "license": "free-for-non-profit",
+    "price": 0,
+    "cover": "assets/img/cover_placeholder.png",
+    "audio": "assets/audio/preview.wav",
+    "tags": [
+      "808",
+      "pads",
+      "glide"
+    ]
+  },
+  {
+    "id": "beat-002",
+    "title": "Sunset Bounce",
+    "producer": "unkvoices",
+    "bpm": 100,
+    "key": "C major",
+    "genre": "Afrobeats",
+    "mood": [
+      "warm",
+      "uplifting"
+    ],
+    "license": "free-preview",
+    "price": 0,
+    "cover": "assets/img/cover_placeholder.png",
+    "audio": "assets/audio/preview.wav",
+    "tags": [
+      "guitars",
+      "bounce",
+      "vibes"
+    ]
+  }
+]

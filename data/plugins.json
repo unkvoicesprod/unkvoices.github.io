@@ -1,0 +1,19 @@
+[
+  {
+    "id": "plg-001",
+    "name": "UV Saturator",
+    "type": "plugin (mock)",
+    "platforms": [
+      "Win",
+      "macOS"
+    ],
+    "formats": [
+      "VST3",
+      "AU"
+    ],
+    "status": "em breve",
+    "demo_audio": "assets/audio/preview.wav",
+    "image": "assets/img/cover_placeholder.png",
+    "notes": "Plugin fictício para demonstrar a página. Substitua quando lançar o real."
+  }
+]
