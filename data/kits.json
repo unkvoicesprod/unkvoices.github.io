@@ -1,40 +1,9 @@
+
 [
   {
-    "id": "kit-001",
-    "name": "Drill Essentials Vol. 1",
-    "type": "drum kit",
-    "formats": [
-      "WAV",
-      "AIFF"
-    ],
-    "content": {
-      "kicks": 10,
-      "snares": 12,
-      "hihats": 14,
-      "808s": 8,
-      "percs": 10
-    },
-    "size_mb": 24,
-    "demo_audio": "assets/audio/preview.wav",
-    "cover": "assets/img/cover_placeholder.png",
-    "license": "royalty-free"
-  },
-  {
-    "id": "kit-002",
-    "name": "Melody Loops Pack — Glow",
-    "type": "melody kit",
-    "formats": [
-      "WAV",
-      "MIDI"
-    ],
-    "content": {
-      "loops": 20,
-      "midis": 20,
-      "stems": 10
-    },
-    "size_mb": 42,
-    "demo_audio": "assets/audio/preview.wav",
-    "cover": "assets/img/cover_placeholder.png",
-    "license": "royalty-free"
+    "id": 1,
+    "title": "808 Essentials",
+    "cover": "assets/img/808-essentials.jpg",
+    "action": "https://unkvoices.github.io/download/808-essentials"
   }
 ]

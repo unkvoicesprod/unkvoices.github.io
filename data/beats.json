@@ -1,44 +1,19 @@
+
 [
   {
-    "id": "beat-001",
-    "title": "Neon Pulse",
-    "producer": "unkvoices",
-    "bpm": 140,
-    "key": "F# minor",
-    "genre": "Trap",
-    "mood": [
-      "dark",
-      "spacey"
-    ],
-    "license": "free-for-non-profit",
-    "price": 0,
-    "cover": "assets/img/cover_placeholder.png",
-    "audio": "assets/audio/preview.wav",
-    "tags": [
-      "808",
-      "pads",
-      "glide"
-    ]
+    "id": 1,
+    "title": "Trap Vibes",
+    "artist": "unkvoices",
+    "cover": "assets/img/trap-vibes.jpg",
+    "file": "assets/beats/trap-vibes.mp3",
+    "action": "https://unkvoices.github.io/play/trap-vibes"
   },
   {
-    "id": "beat-002",
-    "title": "Sunset Bounce",
-    "producer": "unkvoices",
-    "bpm": 100,
-    "key": "C major",
-    "genre": "Afrobeats",
-    "mood": [
-      "warm",
-      "uplifting"
-    ],
-    "license": "free-preview",
-    "price": 0,
-    "cover": "assets/img/cover_placeholder.png",
-    "audio": "assets/audio/preview.wav",
-    "tags": [
-      "guitars",
-      "bounce",
-      "vibes"
-    ]
+    "id": 2,
+    "title": "Lo-Fi Chill",
+    "artist": "unkvoices",
+    "cover": "assets/img/lofi-chill.jpg",
+    "file": "assets/beats/lofi-chill.mp3",
+    "action": "https://unkvoices.github.io/play/lofi-chill"
   }
 ]

@@ -1,18 +1,9 @@
+
 [
   {
-    "id": "tut-001",
-    "title": "Como arrumar seu ganho pra mix bater forte",
-    "topic": "mixagem",
-    "length_min": 6,
-    "url": "#",
-    "summary": "Do zero ao ganho ideal: cadeia, headroom e medição LUFS sem papo furado."
-  },
-  {
-    "id": "tut-002",
-    "title": "Master rápido pro Spotify e TikTok",
-    "topic": "masterização",
-    "length_min": 4,
-    "url": "#",
-    "summary": "Preset inicial, limiter e referências. Direto ao ponto."
+    "id": 1,
+    "title": "Mixagem Básica",
+    "cover": "assets/img/mixagem-basica.jpg",
+    "action": "https://unkvoices.github.io/tutorials/mixagem-basica"
   }
 ]
